@@ -1,0 +1,350 @@
+.modal {
+  text-align: center;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+  }
+
+  &--large {
+    .modal-dialog {
+      @include tablet {
+        width: 615px;
+      }
+    }
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  min-width: 280px;
+  max-width: 420px;
+  width: auto;
+  margin: 25px 20px;
+  word-wrap: break-word;
+
+  @include tablet {
+    max-width: 620px;
+    min-width: 420px;
+    margin: 25px 174px;
+  }
+
+  @include desktop {
+    width: 620px;
+  }
+}
+
+.modal-content {
+  border-radius: 3px;
+  border: 0;
+  display: block;
+  height: auto;
+  width: 100%;
+  overflow: visible;
+  position: relative;
+
+  .close {
+    color: $color-white;
+    font-size: 4.5rem;
+    line-height: 30px;
+    color: #333;
+    font-weight: 500;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    opacity: 1;
+    text-shadow: none;
+    z-index: 1000;
+    outline: none;
+    height: 40px;
+    width: 40px;
+    background-color: $yellow;
+  }
+}
+
+.modal-header {
+  background: $color-white;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  color: #333;
+  padding: 20px;
+  font-size: 1.8rem;
+  text-align: center;
+
+  @include desktop {
+    font-size: 3rem;
+    padding: 25px 50px;
+    text-align: left;
+  }
+
+  img {
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+    margin: 0 auto 10px;
+
+    @include desktop {
+      margin: 0 30px 0 0;
+    }
+  }
+
+  .img {
+    height: 48px;
+    width: 48px;
+    font-size: 50px;
+    color: #18d31b;
+    display: block;
+    margin: 0 auto 8px;
+    background-size: contain;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+
+    @include tablet {
+      background-position: 50% 50%;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 20px;
+    }
+  }
+
+  p {
+    font-size: 1.6rem;
+    margin-top: 20px;
+  }
+}
+
+.modal-title {
+  clear: both;
+  display: block;
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+  text-align: center;
+  width: 100%;
+
+  @include tablet {
+  }
+
+  @include desktop {
+    display: inline;
+    box-shadow: none;
+  }
+}
+
+.modal-body {
+  display: block;
+  width: 100%;
+  font-size: 1.4rem;
+  padding: 30px 20px;
+  height: auto;
+  text-align: left;
+
+  @include tablet {
+    font-size: 1.6rem;
+  }
+
+  @include desktop {
+    padding: 30px 50px 50px;
+  }
+
+  .row {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  form {
+    @extend %form-awesome;
+
+    .pin-number,
+    .otp-number {
+      width: 35px;
+      height: 35px;
+      max-width: 50px;
+      margin: 0 9px;
+      display: inline-block;
+      text-align: center;
+      border-radius: 0;
+      font-size: 1.6rem;
+      border: 1px solid $grey-bg;
+      box-shadow: none;
+      padding: 6px;
+      color: $dark-grey-color;
+
+      &:focus {
+        border-color: $yellow;
+        border-width: 2px;
+        box-shadow: none;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      @include tablet {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    .form-control {
+      @include tablet {
+        padding: 0 10px;
+      }
+    }
+
+    .form-group {
+      &.has-error {
+        .with-errors {
+          text-align: left;
+          padding: 2px 10px 0 10px;
+
+          @include tablet {
+            padding: 2px 12px 0 12px;
+          }
+        }
+      }
+    }
+  }
+
+  p {
+    margin: 0 auto 20px;
+  }
+
+  label {
+    text-align: left;
+  }
+
+  &__content {
+    min-height: 144px;
+
+    @include tablet {
+      min-height: 112px;
+    }
+
+    @include desktop {
+      min-height: 148px;
+    }
+
+    .loading {
+      text-align: center;
+    }
+  }
+}
+
+.modal-buttons {
+  margin-top: 20px;
+  text-align: center;
+
+  @include tablet {
+    margin-top: 40px;
+  }
+
+  @include desktop {
+    text-align: left;
+  }
+
+  .btn {
+    width: 210px;
+    padding: 15px 12px;
+    border: 1px solid #e5e5e5;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #333;
+
+    &.btn-success {
+      background-color: $yellow;
+      &:hover {
+        background-color: $yellow-hover;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      margin-right: 0;
+    }
+
+    @include tablet {
+      width: 320px;
+      font-size: 2rem;
+    }
+
+    @include desktop {
+      width: 210px;
+    }
+  }
+
+  .btn + .btn {
+    @include tablet {
+      margin-top: 30px;
+    }
+    @include desktop {
+      margin: 0 0 0 30px;
+    }
+  }
+
+  &--custom {
+    position: relative;
+    height: 120px;
+
+    .btn {
+      margin-left: -105px;
+      left: 50%;
+
+      @include tablet {
+        width: 320px;
+        margin-left: -160px;
+      }
+
+      @include desktop {
+        width: 210px;
+        left: 0;
+        margin-left: 0;
+      }
+
+      &:first-child {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 0;
+      }
+
+      &:last-child {
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    @include tablet {
+      height: 120px;
+
+      .btn + .btn {
+        @include tablet {
+          margin-top: 0;
+        }
+        @include desktop {
+          margin: 0 0 0 30px;
+        }
+      }
+    }
+
+    @include desktop {
+      height: auto;
+      position: static;
+
+      .btn {
+        &:first-child {
+          position: static;
+        }
+
+        &:last-child {
+          position: static;
+        }
+      }
+    }
+  }
+}
